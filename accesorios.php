@@ -2,10 +2,10 @@
   require 'php/conexion.php';
   $where ="";
 
-  $sql = "SELECT  Descripcion, PrestamoID
-  FROM accesorio
-  INNER JOIN prestamoaccesorio
-  ON accesorio.NroInventarioAccesorio = prestamoaccesorio.NroInventarioAccesorio;";
+  $sql = "SELECT prestamoaccesorio.PrestamoID, accesorio.Descripcion, usuario.NombreUsuario 
+  FROM accesorio 
+  INNER JOIN prestamoaccesorio ON accesorio.NroInventarioAccesorio = prestamoaccesorio.NroInventarioAccesorio 
+  INNER JOIN usuario ON usuario.NroCIUsuario = prestamoaccesorio.NroCIUsuario;";
   $resultado = $mysqli->query($sql);
 
   $sql2 = "SELECT * from accesorio";
@@ -134,6 +134,7 @@
                       <tr>                        
                               <th>Nro. Préstamo</th>
                               <th>Item Accesorio</th>
+                              <th>Nombre de Usuario</th>
                               <th><a class="btn btn-success btn-sm" href="#" data-href="php/añadiraccesorio.php?NroInventarioAccesorio=<?php echo $row2['NroInventarioAccesorio']; ?>" data-toggle="modal" data-target="#añadiraccesorio">Añadir</a></th>
                       </tr>
                       </thead>
@@ -147,6 +148,7 @@
                           
                             <td><?php echo $row['PrestamoID']; ?></td>
                             <td><?php echo $row['Descripcion']; ?></td>
+                            <td><?php echo $row['NombreUsuario']; ?></td>
                             <td><a href="php/modificaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 
                             <td><a href="#" data-href="php/eliminaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -187,13 +189,13 @@
           <div class="modal-body">
                       
                     <div class="form-group">
-                        <label for="codaccesorio">C.I. Docente </label>
-                        <input type="text" class="form-control" name="cidocente" id="cidocente" aria-describedby="emailHelp" placeholder="C.I. Docente" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del docente aquí.</small>
+                        <label for="codaccesorio">C.I. Usuario </label>
+                        <input type="text" class="form-control" name="ciusuario" id="ciusuario" aria-describedby="emailHelp" placeholder="C.I. Usuario" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del usuario aquí.</small>
                       </div>
 
                       
-                  <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['IDPrestamo']; ?>">
+                  <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>"><!--IDPestamo-->
                       <br>
                       <div class="form-group">
                         <label for="codaccesorio">Codigo Accesorio</label>
