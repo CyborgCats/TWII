@@ -187,16 +187,26 @@
           </div>
           <form action="php/añadiraccesorio.php" method="POST">
           <div class="modal-body">
+
+                      <div class="form-group">
+                        <label for="codaccesorio">C.I. Administrador </label>
+                        <input type="text" class="form-control" name="ciadmin" id="ciadmin" aria-describedby="emailHelp" placeholder="C.I. Administrador" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del administrador aquí.</small>
+                      </div>
                       
-                    <div class="form-group">
+                      <div class="form-group">
                         <label for="codaccesorio">C.I. Usuario </label>
                         <input type="text" class="form-control" name="ciusuario" id="ciusuario" aria-describedby="emailHelp" placeholder="C.I. Usuario" required>
                         <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del usuario aquí.</small>
                       </div>
 
-                      
-                  <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>"><!--IDPestamo-->
-                      <br>
+                      <div class="form-group">
+                        <label for="codaccesorio">Nro. Préstamo </label>
+                        <input type="text" class="form-control" name="nroprestamo" id="nroprestamo" aria-describedby="emailHelp" placeholder="Nro. Préstamo" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de Préstamo aquí.</small>
+                      </div>
+                    
+                      <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>"><!--IDPestamo-->
                       <div class="form-group">
                         <label for="codaccesorio">Codigo Accesorio</label>
                         <input type="text" class="form-control" name="codaccesorio" id="codaccesorio" aria-describedby="emailHelp" placeholder="Codigo Accesorios" required>

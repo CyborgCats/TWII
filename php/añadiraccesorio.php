@@ -12,8 +12,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRTP | Préstamos</title>
-    <link rel="shortcut icon" type="image/ico" href="../img/logofaadu.ico"/>
+    <title>LabCom | Préstamos</title>
+    <link rel="shortcut icon" type="image/ico" href="../img/logo.ico"/>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -107,8 +107,12 @@
 
                         $nroprestamoaccesorio = $_POST['nroprestamoaccesorio'];
                         $codaccesorio = $_POST['codaccesorio'];
+                        $nroprestamo = $_POST['nroprestamo'];
+                        $ciadmin = $_POST['ciadmin'];
+                        $ciusuario = $_POST['ciusuario'];
 
-                        $sql = "INSERT INTO prestamoaccesorio (PrestamoID, NroInventarioAccesorio) values ('$nroprestamoaccesorio', '$codaccesorio')";
+                        $sql = "INSERT INTO prestamoaccesorio (`PrestamoID`, `NroPrestamo`, `NroCIAdmin`, `NroCIUsuario`, `NroInventarioAccesorio`) VALUES ('$nroprestamoaccesorio', '$nroprestamo', '$ciadmin', '$ciusuario', $codaccesorio')";
+                        //$sql = "INSERT INTO `prestamoaccesorio` (`PrestamoID`, `NroPrestamo`, `NroCIAdmin`, `NroCIUsuario`, `NroInventarioAccesorio`) VALUES (NULL, '123456', '111', '7854125', '3')";
                         $resultado = $mysqli->query($sql);
                     ?>
 
