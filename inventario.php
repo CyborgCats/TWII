@@ -66,8 +66,6 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="accesorios.php" type="button" data-toggle="modal" data-target="#addPage">Accesorios</a></li>
-                <li><a href="salas.php">Salas</a></li>
-                <li><a href="equipos.php">Equipos</a></li>
               </ul>
             </div>
           </div>
@@ -143,7 +141,7 @@
                     <?php } ?>
                 </tbody>
                 </table>
-                  <a class="btn btn-success" href="addinventario.php">Agregar Préstamo</a>
+                  <a class="btn btn-success" href="addinventario.php">Agregar Accesorio</a>
               </div>
             </div>
 

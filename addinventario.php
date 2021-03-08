@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRTP | Préstamos</title>
+    <title>LabCom | Préstamos</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -27,8 +27,6 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="home.php">Inicio</a></li>
             <li><a href="accesorios.php">Accesorios</a></li>
-            <li><a href="salas.php">Salas</a></li>
-            <li><a href="equipos.php">Equipos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Bienvenido!</a></li>
@@ -52,8 +50,6 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="accesorios.php" type="button" data-toggle="modal" data-target="#addPage">Accesorios</a></li>
-                <li><a href="salas.php">Salas</a></li>
-                <li><a href="equipos.php">Equipos</a></li>
               </ul>
             </div>
           </div>

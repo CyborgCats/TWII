@@ -1,9 +1,9 @@
 <?php 
     require 'conexion.php';
 
-    $PrestamoAccesorioDetalleID = $_GET['PrestamoAccesorioDetalleID'];
+    $PrestamoID = $_GET['PrestamoID'];
 
-    $sql = "SELECT * FROM prestamoaccesoriodetalle WHERE PrestamoAccesorioDetalleID = '$PrestamoAccesorioDetalleID'";
+    $sql = "SELECT * FROM prestamoaccesorio WHERE PrestamoID = '$PrestamoID'";
     $resultado = $mysqli->query($sql);
 
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRTP | Préstamos</title>
+    <title>LabCom | Préstamos</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -33,17 +33,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CRTP</a>
+          <a class="navbar-brand" href="#">LabCom</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Inicio</a></li>
             <li><a href="../accesorios.html">Accesorios</a></li>
-            <li><a href="../salas.html">Salas</a></li>
-            <li><a href="../equipos.php">Equipos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Bienvenido!</a></li>
+            <li><a href="#">Bienvenido, <?php echo $user?>!</a></li>
             <li><a href="../login.html">Cerrar Sesión</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -64,8 +62,6 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a type="button" data-toggle="modal" data-target="#addPage">Accesorios</a></li>
-                <li><a href="#">Salas</a></li>
-                <li><a href="#">Equipos</a></li>
               </ul>
             </div>
           </div>
@@ -92,8 +88,6 @@
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio
               </a>
               <a href="accesorios.html" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Préstamos - Accesorios <span class="badge"></span></a>
-              <a href="salas.html" class="list-group-item"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Préstamos - Salas <span class="badge"></span></a>
-              <a href="equipos.php" class="list-group-item"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> Préstamos - Equipos <span class="badge"></span></a>
             </div>
 
             <div class="list-group">
@@ -118,18 +112,30 @@
                     <div class="form-row">
 
                       <div class="form-group col-md-12">
-                        <label for="inputEmail4">Número de Préstamo</label>
-                        <input type="text" class="form-control" id="prestamoaccesorioid" name="prestamoaccesorioid"  value="<?php echo $row['PrestamoAccesorioDetalleID']; ?>" readonly>
+                        <label for="prestamoaccesorioid">Número de Préstamo</label>
+                        <input type="text" class="form-control" id="prestamoaccesorioid" name="prestamoaccesorioid"  value="<?php echo $row['PrestamoID']; ?>" readonly>
                       </div>
 
                       <div class="form-group col-md-12">
-                        <label for="inputPassword4">Nro. de Inventario del Accesorio</label>
-                        <input type="text" class="form-control" id="nroprestamoaccesorio" name="nroprestamoaccesorio"  value="<?php echo $row['NroInventarioAccesorio']; ?>" required>
+                        <label for="nroprestamo">Número de Préstamo</label>
+                        <input type="text" class="form-control" id="nroprestamo" name="nroprestamo"  value="<?php echo $row['NroPrestamo']; ?>" readonly>
                       </div>
+
+                      <div class="form-group">
+                        <label for="ciadmin">C.I. Administrador </label>
+                        <input type="text" class="form-control" name="ciadmin" id="ciadmin" value="<?php echo $row['NroCIAdmin']; ?>" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del administrador aquí.</small>
+                      </div>                      
                       
-                      <div class="form-group col-md-12">
-                        <label for="inputPassword4">C.I. del Docente</label>
-                        <input type="text" class="form-control" id="cidocente" name="cidocente"  value="<?php echo $row['NroCIDocente']; ?>" required>
+                      <div class="form-group">
+                        <label for="ciusuario">C.I. Usuario </label>
+                        <input type="text" class="form-control" id="ciusuario" name="ciusuario"  value="<?php echo $row['NroCIUsuario']; ?>" required>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="codaccesorio">Código Accesorio</label>
+                        <input type="text" class="form-control" id="codaccesorio" name="codaccesorio"  value="<?php echo $row['NroInventarioAccesorio']; ?>" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el código del accesorio aquí.</small>
                       </div>
 
                     </div> 

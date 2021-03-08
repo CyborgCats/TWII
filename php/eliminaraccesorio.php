@@ -37,7 +37,7 @@
             <li><a href="../accesorios.php">Accesorios</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Bienvenido! <?php echo $user ?></a></li>
+            <li><a href="#">Bienvenido, <?php echo $user ?>!</a></li>
             <li><a href="../index.php">Cerrar Sesión</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -90,8 +90,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="../pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
-                <a href="../graphic/accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Existencia de Accesorios <span class="badge"></span></a>
+                <a href="../pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Préstamos <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">

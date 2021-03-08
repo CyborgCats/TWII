@@ -118,7 +118,7 @@
 
                 <form>
                   <div class="form-row">
-                  
+
                     <table class="table table-striped table-hover">
                       <thead>
                       <tr>                        
@@ -139,7 +139,7 @@
                             <td><?php echo $row['PrestamoID']; ?></td>
                             <td><?php echo $row['Descripcion']; ?></td>
                             <td><?php echo $row['NombreUsuario']; ?></td>
-                            <td><a href="php/modificaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td><a href="php/modificaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 
                             <td><a href="#" data-href="php/eliminaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
                           </tr>
@@ -176,35 +176,39 @@
             </button>
           </div>
           <form action="php/añadiraccesorio.php" method="POST">
-          <div class="modal-body">
+              <div class="modal-body">
+                      
+                      <!--<input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>">-->
+                      <div class="form-group">
+                        <label for="nroprestamoaccesorio">Nro. Préstamo-Accesorio </label>
+                        <input type="text" class="form-control" name="nroprestamoaccesorio" id="nroprestamoaccesorio" aria-describedby="emailHelp" placeholder="Nro. PA" required>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de PA aquí.</small>
+                      </div>
 
                       <div class="form-group">
-                        <label for="codaccesorio">C.I. Administrador </label>
+                        <label for="ciadmin">C.I. Administrador </label>
                         <input type="text" class="form-control" name="ciadmin" id="ciadmin" aria-describedby="emailHelp" placeholder="C.I. Administrador" required>
                         <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del administrador aquí.</small>
                       </div>
                       
                       <div class="form-group">
-                        <label for="codaccesorio">C.I. Usuario </label>
+                        <label for="ciusuario">C.I. Usuario </label>
                         <input type="text" class="form-control" name="ciusuario" id="ciusuario" aria-describedby="emailHelp" placeholder="C.I. Usuario" required>
                         <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del usuario aquí.</small>
                       </div>
 
                       <div class="form-group">
-                        <label for="codaccesorio">Nro. Préstamo </label>
+                        <label for="nroprestamo">Nro. Préstamo </label>
                         <input type="text" class="form-control" name="nroprestamo" id="nroprestamo" aria-describedby="emailHelp" placeholder="Nro. Préstamo" required>
                         <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de Préstamo aquí.</small>
                       </div>
                     
-                      <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>">
                       <div class="form-group">
                         <label for="codaccesorio">Código Accesorio</label>
                         <input type="text" class="form-control" name="codaccesorio" id="codaccesorio" aria-describedby="emailHelp" placeholder="Codigo Accesorios" required>
                         <small id="emailHelp" class="form-text text-muted">Inserte el código del accesorio aquí.</small>
                       </div>
                   
-                  
-                 
               </div>
               <div class="modal-footer">            
                 <button type="submit" name="guardardatos" class="btn btn-success">Añadir Accesorio</button>

@@ -13,8 +13,8 @@
             //creamos celda
             $this->Cell(30);
             //creamos celda sin contorno, salto de linea, centrada
-            $this->Cell(130,10, 'Reporte Diario',0,1,'C');
-            $this->Cell(190,5, 'Prestamo de Accesorios',0,0,'C');
+            $this->Cell(130,10, 'Reporte',0,1,'C');
+            $this->Cell(190,5, 'Prestamo de Accesorios - Usuarios',0,0,'C');
             //salto de linea
             $this->Ln(20);
         }

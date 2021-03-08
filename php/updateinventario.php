@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRTP | Préstamos</title>
+    <title>LabCom | Préstamos</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -21,14 +21,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CRTP</a>
+          <a class="navbar-brand" href="#">LabCom</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Inicio</a></li>
             <li><a href="accesorios.html">Accesorios</a></li>
-            <li><a href="salas.html">Salas</a></li>
-            <li><a href="equipos.php">Equipos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Bienvenido!</a></li>
@@ -52,8 +50,6 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a type="button" data-toggle="modal" data-target="#addPage">Accesorios</a></li>
-                <li><a href="../salas.php">Salas</a></li>
-                <li><a href="../equipos.php">Equipos</a></li>
               </ul>
             </div>
           </div>
@@ -80,8 +76,6 @@
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio
               </a>
               <a href="../accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Préstamos - Accesorios <span class="badge"></span></a>
-              <a href="../salas.php" class="list-group-item"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Préstamos - Salas <span class="badge"></span></a>
-              <a href="../equipos.php" class="list-group-item"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> Préstamos - Equipos <span class="badge"></span></a>
             </div>
 
             <div class="list-group">
@@ -90,7 +84,6 @@
                 </a>
                 <a href="pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
                 <a href="graphic/accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Existencia de Accesorios <span class="badge"></span></a>
-                <a href="graphic/docentes.php" class="list-group-item"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span> Docentes y Accesorios <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">
@@ -117,12 +110,12 @@
               ?>
 
                   <?php if($resultado) { ?>
-                    <h3>Préstamo Modificado!</h3>
+                    <h3>Accesorio Modificado!</h3>
                   <?php } else { ?>
-                    <h3>Error al Modificar el Préstamo!</h3>
+                    <h3>Error al Modificar el Accesorio!</h3>
                     <?php } ?>
 
-                    <a href="../equipos.php" class="btn btn-primary">Regresar</a>
+                    <a href="../inventario.php" class="btn btn-primary">Regresar</a>
 
               </div>
 
@@ -134,7 +127,7 @@
     </section>
 
     <footer id="footer">
-    <p>CRTP v1.0 &copy; 2019 - Desarrollado para el CRTP (FAADU)</p>
+      <p>LabCom v1.0 &copy; 2021 - Desarrollado para LabCom</p>
     </footer>
 
 
