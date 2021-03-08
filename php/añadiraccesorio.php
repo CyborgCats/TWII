@@ -110,7 +110,7 @@
                         $nroprestamo = $_POST['nroprestamo'];
                         $ciadmin = $_POST['ciadmin'];
                         $ciusuario = $_POST['ciusuario'];
-
+                        
                         $sql = "INSERT INTO prestamoaccesorio (`PrestamoID`, `NroPrestamo`, `NroCIAdmin`, `NroCIUsuario`, `NroInventarioAccesorio`) VALUES ('$nroprestamoaccesorio', '$nroprestamo', '$ciadmin', '$ciusuario', $codaccesorio')";
                         //$sql = "INSERT INTO `prestamoaccesorio` (`PrestamoID`, `NroPrestamo`, `NroCIAdmin`, `NroCIUsuario`, `NroInventarioAccesorio`) VALUES (NULL, '123456', '111', '7854125', '3')";
                         $resultado = $mysqli->query($sql);

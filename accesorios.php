@@ -73,8 +73,6 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="accesorios.php" type="button" data-toggle="modal" data-target="#addPage">Accesorios</a></li>
-                <li><a href="salas.php">Salas</a></li>
-                <li><a href="equipos.php">Equipos</a></li>
               </ul>
             </div>
           </div>
@@ -120,15 +118,7 @@
 
                 <form>
                   <div class="form-row">
-                   <!-- <div class="form-group col-md-6">
-                      <label for="nroprestamo">Nro. Préstamo</label>
-                      <input type="text" class="form-control" id="nroprestamo" placeholder="Nro. Préstamo" readonly>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="cidocente">Nro. C.I. Docente</label>
-                      <input type="number" class="form-control" id="cidocente" placeholder="C.I. Docente">
-                    </div>-->
-
+                  
                     <table class="table table-striped table-hover">
                       <thead>
                       <tr>                        
@@ -206,11 +196,11 @@
                         <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de Préstamo aquí.</small>
                       </div>
                     
-                      <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>"><!--IDPestamo-->
+                      <input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>">
                       <div class="form-group">
-                        <label for="codaccesorio">Codigo Accesorio</label>
+                        <label for="codaccesorio">Código Accesorio</label>
                         <input type="text" class="form-control" name="codaccesorio" id="codaccesorio" aria-describedby="emailHelp" placeholder="Codigo Accesorios" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el codigo del accesorio aquí.</small>
+                        <small id="emailHelp" class="form-text text-muted">Inserte el código del accesorio aquí.</small>
                       </div>
                   
                   
