@@ -98,14 +98,14 @@
               <?php
                 require 'conexion.php';
 
-                $nroprestamoaccesorio = $_POST['nroprestamoaccesorio'];
+                //$nroprestamoaccesorio = $_POST['nroprestamoaccesorio'];
                 $codaccesorio = $_POST['codaccesorio'];
                 $nroprestamo = $_POST['nroprestamo'];
                 $ciadmin = $_POST['ciadmin'];
                 $ciusuario = $_POST['ciusuario'];
                 
-                $sql = "INSERT INTO prestamoaccesorio (PrestamoID, NroPrestamo, NroCIAdmin, NroCIUsuario, NroInventarioAccesorio) 
-                VALUES ('$nroprestamoaccesorio', '$nroprestamo', '$ciadmin', '$ciusuario', $codaccesorio')";
+                $sql = "INSERT INTO prestamoaccesorio (NroPrestamo, NroCIAdmin, NroCIUsuario, NroInventarioAccesorio) 
+                VALUES ('$nroprestamo', $ciadmin, $ciusuario, $codaccesorio)";
                 $resultado = $mysqli->query($sql);
               ?>
 

@@ -122,7 +122,6 @@
                               <th>Nro. Préstamo</th>
                               <th>Item Accesorio</th>
                               <th>Nombre de Usuario</th>
-                              <th><a class="btn btn-success btn-sm" href="#" data-href="php/añadiraccesorio.php?NroInventarioAccesorio=<?php echo $row2['NroInventarioAccesorio']; ?>" data-toggle="modal" data-target="#añadiraccesorio">Añadir</a></th>
                       </tr>
                       </thead>
                       
@@ -131,20 +130,20 @@
                           while($row = $resultado->fetch_array(MYSQLI_ASSOC))
                           {
                         ?>
-                        <tr>
+                          <tr>
                           
                             <td><?php echo $row['PrestamoID']; ?></td>
                             <td><?php echo $row['Descripcion']; ?></td>
                             <td><?php echo $row['NombreUsuario']; ?></td>
-                            <td><a href="php/modificaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 
-                            <td><a href="#" data-href="php/eliminaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
                           </tr>
                           <?php } ?>
                       </tbody>
                     </table>
 
                     <br>
+                    <a class="btn btn-info" href="pdf/index.php">Generar PDF</a>
+
                     <!-- <button type="submit" class="btn btn-primary">Enviar</button>-->
                   </div>
 
@@ -161,86 +160,6 @@
     <footer id="footer">
         <p>LabCom v1.0 &copy; 2021 - Desarrollado para LabCom</p>
     </footer>    
-
-    <!-- Modal -->
-    <div class="modal fade" id="añadiraccesorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalCenterTitle">Añadir Accesorios</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form action="php/guardarprestamoaccesorio.php" method="POST">
-              <div class="modal-body">
-                      
-                      <!--<input type="hidden" name="nroprestamoaccesorio" id="nroprestamoaccesorio" value="<?php echo $row['PrestamoID']; ?>">-->
-                      <!--<div class="form-group">
-                        <label for="nroprestamoaccesorio">Nro. Préstamo-Accesorio </label>
-                        <input type="text" class="form-control" name="nroprestamoaccesorio" id="nroprestamoaccesorio" aria-describedby="emailHelp" placeholder="Nro. PA" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de PA aquí.</small>
-                      </div>-->
-
-                      <div class="form-group">
-                        <label for="ciadmin">C.I. Administrador </label>
-                        <input type="text" class="form-control" name="ciadmin" id="ciadmin" aria-describedby="emailHelp" placeholder="C.I. Administrador" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del administrador aquí.</small>
-                      </div>
-                      
-                      <div class="form-group">
-                        <label for="ciusuario">C.I. Usuario </label>
-                        <input type="text" class="form-control" name="ciusuario" id="ciusuario" aria-describedby="emailHelp" placeholder="C.I. Usuario" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del usuario aquí.</small>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="nroprestamo">Nro. Préstamo </label>
-                        <input type="text" class="form-control" name="nroprestamo" id="nroprestamo" aria-describedby="emailHelp" placeholder="Nro. Préstamo" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el Nro. de Préstamo aquí.</small>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label for="codaccesorio">Código Accesorio</label>
-                        <input type="text" class="form-control" name="codaccesorio" id="codaccesorio" aria-describedby="emailHelp" placeholder="Codigo Accesorios" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el código del accesorio aquí.</small>
-                      </div>
-                  
-              </div>
-              <div class="modal-footer">            
-                <button type="submit" name="guardardatos" class="btn btn-success">Añadir Accesorio</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-       <!-- Modals -->
-
-    <!-- Add Page -->
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">Eliminar Préstamo</h4>
-					</div>
-					
-					<div class="modal-body">
-						¿Está seguro de que desea eliminar el préstamo??
-					</div>
-					
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<a class="btn btn-danger btn-ok">Eliminar</a>
-					</div>
-				</div>
-			</div>
-		</div>
-      
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -83,8 +83,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Diario - Equipos <span class="badge"></span></a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Diario - Accesorios <span class="badge"></span></a>
+                <a href="reporte.php" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Diario - Equipos <span class="badge"></span></a>
             </div>
 
 
