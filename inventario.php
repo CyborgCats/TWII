@@ -140,6 +140,7 @@
                 </tbody>
                 </table>
                   <a class="btn btn-success" href="addinventario.php">Agregar Accesorio</a>
+
               </div>
             </div>
 
@@ -169,6 +170,10 @@
 					<div class="modal-body">
 						¿Está seguro de que desea eliminar equipo o accesorio seleccionado?
 					</div>
+
+          <div class="alert alert-danger" role="alert">
+            Advertencia: El accesorio seleccionado no podrá eliminarse si está siendo objeto de un préstamo, ¿Desea continuar?.
+          </div>
 					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

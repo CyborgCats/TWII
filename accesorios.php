@@ -136,9 +136,9 @@
                             <td><?php echo $row['PrestamoID']; ?></td>
                             <td><?php echo $row['Descripcion']; ?></td>
                             <td><?php echo $row['NombreUsuario']; ?></td>
-                            <td><a href="php/modificaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            <td><a href="php/modificaraccesorio.php?PrestamoID=<?php echo $row['PrestamoID']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 
-                            <td><a href="#" data-href="php/eliminaraccesorio.php?PrestamoAccesorioDetalleID=<?php echo $row['PrestamoAccesorioDetalleID']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                            <td><a href="#" data-href="php/eliminaraccesorio.php?PrestamoID=<?php echo $row['PrestamoID']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
                           </tr>
                           <?php } ?>
                       </tbody>

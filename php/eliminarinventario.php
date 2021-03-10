@@ -90,8 +90,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
-                <a href="graphic/accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Existencia de Accesorios <span class="badge"></span></a>
+                <a href="../reporte.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">
@@ -109,14 +108,16 @@
 
                 $NroInventarioAccesorio = $_GET['NroInventarioAccesorio'];
 
-                 $sql = "DELETE FROM accesorio WHERE NroInventarioAccesorio='$NroInventarioAccesorio'";
+                 $sql = "DELETE FROM accesorio WHERE NroInventarioAccesorio=$NroInventarioAccesorio;";
                  $resultado = $mysqli->query($sql);
               ?>
 
                   <?php if($resultado) { ?>
                     <h3>Accesorio Eliminado!</h3>
                   <?php } else { ?>
-                    <h3>Error al Eliminar los Accesorios!</h3>
+                    <div class="alert alert-primary" role="alert">
+                      Error al Eliminar el Accesorio! Probablemente el accesorio es objeto de un préstamo. Diríjase a la <a class="alert-link" href="../inventario.php">Página de Inventario</a>.
+                    </div>
                     <?php } ?>
 
                     <a href="../inventario.php" class="btn btn-primary">Regresar</a>

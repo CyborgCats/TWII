@@ -90,7 +90,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="../pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Préstamos <span class="badge"></span></a>
+                <a href="../reporte.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Préstamos <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">
@@ -106,9 +106,9 @@
               <?php
                 require 'conexion.php';
 
-                $PrestamoAccesorioDetalleID = $_GET['PrestamoAccesorioDetalleID'];
+                $PrestamoID = $_GET['PrestamoID'];
 
-                 $sql = "DELETE FROM prestamoaccesoriodetalle WHERE PrestamoAccesorioDetalleID='$PrestamoAccesorioDetalleID'";
+                 $sql = "DELETE FROM prestamoaccesorio WHERE PrestamoID=$PrestamoID";
                  $resultado = $mysqli->query($sql);
               ?>
 
@@ -118,7 +118,7 @@
                     <h3>Error al Eliminar el Préstamo!</h3>
                     <?php } ?>
 
-                    <a href="../accesorio.php" class="btn btn-primary">Regresar</a>
+                    <a href="../accesorios.php" class="btn btn-primary">Regresar</a>
 
               </div>
 

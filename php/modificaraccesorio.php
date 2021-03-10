@@ -3,11 +3,17 @@
 
     $PrestamoID = $_GET['PrestamoID'];
 
-    $sql = "SELECT * FROM prestamoaccesorio WHERE PrestamoID = '$PrestamoID'";
+    $sql = "SELECT * FROM prestamoaccesorio WHERE PrestamoID = $PrestamoID";
     $resultado = $mysqli->query($sql);
 
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
+    session_start();
+    $user = $_SESSION['username'];
+  
+    if(!isset($user)){
+      header("location: index.php");
+    }
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +47,7 @@
             <li><a href="../accesorios.html">Accesorios</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Bienvenido, <?php echo $user?>!</a></li>
+            <li><a href="#">Bienvenido, <?php echo $user;?>!</a></li>
             <li><a href="../login.html">Cerrar Sesión</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -94,9 +100,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
-                <a href="graphic/accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Existencia de Accesorios <span class="badge"></span></a>
-                <a href="graphic/docentes.php" class="list-group-item"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span> Docentes y Accesorios <span class="badge"></span></a>
+                <a href="../reporte.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">
@@ -121,27 +125,26 @@
                         <input type="text" class="form-control" id="nroprestamo" name="nroprestamo"  value="<?php echo $row['NroPrestamo']; ?>" readonly>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group col-md-12">
                         <label for="ciadmin">C.I. Administrador </label>
                         <input type="text" class="form-control" name="ciadmin" id="ciadmin" value="<?php echo $row['NroCIAdmin']; ?>" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el C.I. del administrador aquí.</small>
                       </div>                      
                       
-                      <div class="form-group">
+                      <div class="form-group col-md-12">
                         <label for="ciusuario">C.I. Usuario </label>
                         <input type="text" class="form-control" id="ciusuario" name="ciusuario"  value="<?php echo $row['NroCIUsuario']; ?>" required>
                       </div>
                     
-                      <div class="form-group">
+                      <div class="form-group col-md-12">
                         <label for="codaccesorio">Código Accesorio</label>
                         <input type="text" class="form-control" id="codaccesorio" name="codaccesorio"  value="<?php echo $row['NroInventarioAccesorio']; ?>" required>
-                        <small id="emailHelp" class="form-text text-muted">Inserte el código del accesorio aquí.</small>
                       </div>
 
                     </div> 
 
                     <br>
                     <button type="submit" class="btn btn-primary">Aplicar Cambios</button>
+                    <a class="btn btn-danger" href="../accesorios.php">Regresar</a>
                   </form>
               </div>
 

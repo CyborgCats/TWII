@@ -8,6 +8,12 @@
 
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
+    session_start();
+    $user = $_SESSION['username'];
+
+  if(!isset($user)){
+    header("location: index.php");
+  }
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +47,7 @@
             <li><a href="../accesorios.php">Accesorios</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Bienvenido, <?php echo $user ?>!</a></li>
+            <li><a href="#">Bienvenido, <?php echo $user;?>!</a></li>
             <li><a href="../index.php">Cerrar Sesión</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -95,8 +101,7 @@
                 <a type="active" class="list-group-item active main-color-bg">
                   <span class="glyphicon glyphicon-list-alt active main-color-bg" aria-hidden="true"></span> Reportes
                 </a>
-                <a href="pdf/index.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
-                <a href="graphic/accesorios.php" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Existencia de Accesorios <span class="badge"></span></a>
+                <a href="..f/reporte.php" class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Diarios de Equipos <span class="badge"></span></a>
             </div>
           </div>
           <div class="col-md-9">
@@ -131,6 +136,7 @@
 
                     <br>
                     <button type="submit" class="btn btn-primary">Aplicar Cambios</button>
+                    <a class="btn btn-danger" href="../inventario.php">Regresar</a>
                   </form>
               </div>
 
